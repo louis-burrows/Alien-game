@@ -30,8 +30,35 @@ It should all be in one html file. -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fire at the mothership</title>
+
+<script>
+
+  const mothershipLosesPoints = () => {
+    document.getElementById("mothershipHealth").innerHTML = (document.getElementById("mothershipHealth").innerHTML - 7);
+
+    if (document.getElementById("mothershipHealth").innerHTML < "1") {
+      document.getElementById("mothership").src = "https://swebtoon-phinf.pstatic.net/20171216_127/15134322404570P2yA_JPEG/e38d8738-1fa6-40b6-a34f-1f9d7ced1d2a.jpg"
+      document.getElementById("mothershipHealth").innerHTML = "The Mother Ship has been taken down!!";
+      document.getElementById("mothershipTag").style.display = "none";
+
+    }
+
+  }
+
+</script>
+
+
 </head>
 <body>
+
+
+  <img id="mothership" style="max-width: 200px; max-height: 200px;" src="https://media2.s-nbcnews.com/j/newscms/2018_01/2280531/180103-ufo-illustration-mn-1015_0758c11fb1637ed3431613cef06cd246.fit-1240w.jpg" alt="the mothership">
+  <div id="mothershipTag">Mothership Health -</div>
+  <div id="mothershipHealth">100</div>
+
+  <button style="margin-top: 50px; border-radius: 5px" type="button" onclick="mothershipLosesPoints()">
+    Fire at the mothership
+  </button>
   
 </body>
 </html>
